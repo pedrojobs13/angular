@@ -1,0 +1,74 @@
+<!--<div class="row">-->
+<!--  <div class="col-3 ">-->
+<!--    <button class="btn btn-primary">Click me!</button>-->
+<!--    <p>{{ firstName }}</p>-->
+<!--  </div>-->
+<!--  <div class="col-3">-->
+<!--    <p>{{ firstName }}</p>-->
+<!--  </div>-->
+<!--  <div class="col-3">-->
+<!--    <p>{{ version }}</p>-->
+<!--  </div>-->
+<!--  <div class="col-3">-->
+<!--    <p>{{ currentDate }}</p>-->
+<!--  </div>-->
+<!--</div>-->
+<!--<div class="row">-->
+<!--  <div class="col-3">-->
+<!--    <input type="text" [value]="firstName" class="form-control">-->
+<!--  </div>-->
+<!--  <div class="col-3">-->
+<!--    <input type="text" [(ngModel)]="firstName" class="form-control">-->
+<!--  </div>-->
+<!--  <div class="col-3">-->
+<!--    <input [type]="inputType">-->
+<!--  </div>-->
+<!--  <select [(ngModel)]="selectText">-->
+<!--    <option value="A">A</option>-->
+<!--    <option value="B">B</option>-->
+<!--    <option value="C">C</option>-->
+<!--  </select>-->
+
+<!--  <div>-->
+<!--    <p>{{ selectText }}</p>-->
+<!--  </div>-->
+
+<!--  <div>-->
+<!--    <button (click)="showMessage('Hi there')">Click me!</button>-->
+<!--  </div>-->
+<!--</div>-->
+
+<div class="row">
+  <div class="col-4">
+    <ul>
+      <li *ngFor="let item of roleList">{{ item.role }}</li>
+    </ul>
+  </div>
+  <div class="col-4">
+    <select>
+      <option *ngFor="let role of roleList" [value]="role.roleId">{{ role.role }}</option>
+    </select>
+  </div>
+  <div class="col-4">
+    <button class="btn btn-warning mx-2" *ngFor="let item of roleList">{{ item.role }}</button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12">
+    <table class="table table-bordered">
+      <thead>
+      <tr>
+        <th>Sr No</th>
+        <th>Role Name</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let role of roleList; let srno = index">
+        <td>{{ role.roleId }}</td>
+        <td>{{ role.role }}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

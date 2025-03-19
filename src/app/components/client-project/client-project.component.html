@@ -1,0 +1,110 @@
+<div class="row">
+  <div class="col-8">
+    <div class="card">
+      <div class="card-header bg-success">
+        Client List
+      </div>
+      <div class="card-body">
+
+        <div class="row">
+          <div class="col-12">
+            <table class="table table-bordered">
+              <thead>
+              <tr>
+                <th>Sr No</th>
+                <th>Company Name</th>
+                <th>Person Name</th>
+                <th>Contact No</th>
+                <th>City</th>
+              </tr>
+              </thead>
+              <tbody>
+
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="card">
+      <div class="card-header bg-success">
+        New Client
+      </div>
+      <div class="card-body">
+        <form [formGroup]="projectForm">
+          <div class="row">
+            <div class="col-6">
+              <label for="">Person Name</label>
+              <input type="text" formControlName="projectName"
+                     class="form-control" name="contacPersonName">
+            </div>
+            <div class="col-6">
+              <label for="">Start Date</label>
+              <input type="date" formControlName="startDate" class="form-control" name="companyName">
+            </div>
+            <div class="col-6">
+              <label for="">End Date</label>
+              <input type="date" formControlName="expectedEndDate" class="form-control" name="contactNo">
+            </div>
+            <div class="col-6">
+              <label for="">Contact Name</label>
+              <input type="text" formControlName="contactPerson" class="form-control" name="city">
+            </div>
+            <div class="col-6">
+              <label for="">Contact Mobile</label>
+              <input type="text" formControlName="contactPersonContactNo" class="form-control" name="state">
+            </div>
+            <div class="col-6">
+              <label for="">Contact Email</label>
+              <input type="text" formControlName="contactPersonEmailId" class="form-control" name="pincode">
+            </div>
+            <div class="col-6">
+              <label for="">Total Emloyee</label>
+              <textarea type="text" formControlName="totalEmpWorking" class="form-control" name="address">
+
+            </textarea>
+            </div>
+            <div class="col-6">
+              <label for="">project Cost</label>
+              <input type="text" formControlName="projectCost" class="form-control" name="employeeStrength">
+            </div>
+            <div class="col-6">
+              <label for="">project Details</label>
+              <input type="text" formControlName="projectDetails" class="form-control" name="gstNo">
+            </div>
+            <div class="col-6">
+              <label for="">Select client</label>
+              <select formControlName="clientId" class="form-control">
+                <option value=""> Select Client
+                </option>
+                @for (item of clientList; track $index) {
+                  <option [value]="item.clientId">{{ item.contactPersonName }}</option>
+                }
+              </select>
+            </div>
+            <div class="col-6">
+              <label for="">LeadByEmpId</label>
+              <select formControlName="leadByEmpId" class="form-control">
+                <option value=""> Select Employee</option>
+                @for (item of employeeList; track $index) {
+                  <option [value]="item.empId">{{ item.empName }} - {{ item.empCode }}</option>
+                }
+              </select>
+            </div>
+          </div>
+        </form>
+        <div class="row">
+          <div class="col-6 text-center">
+            <button class="btn btn-secondary">Reset</button>
+          </div>
+          <div class="col-6 text-center">
+            <button class="btn btn-success" (click)="onSaveProject()">
+              Save Project
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
