@@ -3,10 +3,12 @@ import {Client} from '../../model/class/Client';
 import {FormsModule} from '@angular/forms';
 import {ClientService} from '../../services/client.service';
 import {APIResponseModel} from '../../model/interface/role';
+import {AlertComponent} from "../alert/alert.component";
+import {MyButtonComponent} from "../my-button/my-button.component";
 
 @Component({
   selector: 'app-client',
-  imports: [FormsModule],
+    imports: [FormsModule, AlertComponent, MyButtonComponent],
   templateUrl: './client.component.html',
   styleUrl: './client.component.css'
 })
